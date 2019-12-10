@@ -4,8 +4,9 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
-use App\Role;
+use Illuminate\Support\Facades\Schema;
 use App\MenuCategory;
+use App\Role;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -16,6 +17,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        Schema::defaultStringLength(191);
+        
         if (! $this->app->runningInConsole()) {
 
             view()->share('roles', Role::all());
