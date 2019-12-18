@@ -1,4 +1,4 @@
-@extends('layouts.AdminBSB.master')
+@extends('layouts.Preclinic.master')
 
 @section('content')
 <div class="container">
